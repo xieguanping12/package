@@ -26,7 +26,8 @@ $api->version('v1', ['middleware' => 'api', 'namespace' => 'App\Http\Controllers
     $api->get('exception', function () {
         throw new Exception('this is exception');
     });
-    $api->get('users/{id}', ['as' => 'users.index', 'uses'=>'UserController@show']);
+    $api->get('users/{id}', ['as' => 'users.show', 'uses'=>'UserController@show']);
+    $api->get('users', ['as' => 'users.index', 'uses'=>'UserController@index']);
 });
 
 
