@@ -19,13 +19,14 @@ use Illuminate\Http\Request;
 
 $api = app('Dingo\Api\Routing\Router');
 
-$api->version('v1', function ($api) {
+$api->version('v1', ['middleware' => 'api', 'namespace' => 'App\Http\Controllers\Api\V1'], function ($api) {
     $api->get('version', function () {
         return response('this is version v1');
     });
     $api->get('exception', function () {
         throw new Exception('this is exception');
     });
+    $api->get('users/{id}', ['as' => 'users.index', 'uses'=>'UserController@show']);
 });
 
 
