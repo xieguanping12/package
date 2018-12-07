@@ -47,7 +47,8 @@ class UserController extends ApiBaseController
      */
     public function show($id)
     {
-        return User::findOrFail($id);
+        $user = User::findOrFail($id);
+        return $this->response->array($user->toArray());
     }
 
     /**
