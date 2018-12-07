@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\Api\V1;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\Api\ApiBaseController;
 use App\User;
 use Illuminate\Http\Request;
 
-class UserController extends Controller
+class UserController extends ApiBaseController
 {
     /**
      * Display a listing of the resource.
