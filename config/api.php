@@ -168,7 +168,8 @@ return [
     */
 
     'auth' => [
-
+//        'jwt' => 'Dingo\Api\Auth\Provider\JWT',
+//        'custom' => 'App\Providers\CustomProvider',
     ],
 
     /*
